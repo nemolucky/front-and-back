@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+:root {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+}
+
+.card {
+  width: 40rem;
+  background-color: #eaeaea;
+  border: 0.125rem gray solid;
+  border-radius: 0.875rem;
+  padding: 0.875rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+}
+.card__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+.card__image {
+  height: 100%;
+  width: 14rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+/*# sourceMappingURL=style.css.map */

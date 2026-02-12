@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+$card-background: #eaeaea;
+$info-font-size: 1rem;
+$card-border: 0.125rem gray solid;
+
+:root {
+	font-family: 'JetBrains Mono', monospace;
+	font-optical-sizing: auto;
+}
+
+@mixin image($image-size, $radius) {
+	height: 100%;
+	width: $image-size;
+	object-fit: contain;
+	border-radius: $radius;
+}
+
+@mixin product_card(
+	$width,
+	$background-color,
+	$border,
+	$radius: 0.875rem,
+	$padding: 0.875rem
+) {
+	width: $width;
+	background-color: $background-color;
+	border: $border;
+	border-radius: $radius;
+	padding: $padding;
+}
+
+.card {
+	@include product_card(40rem, $card-background, $card-border);
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	gap: 1rem;
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		font-size: $info-font-size;
+	}
+
+	&__image {
+		@include image(14rem, 0.5rem);
+		justify-self: center;
+		align-self: center;
+	}
+}
