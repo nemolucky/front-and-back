@@ -14,35 +14,38 @@ router.get('/:id', (req: Request, res: Response) => {
 	const id = Number(req.params.id)
 	const product = productsService.productById(id)
 	if (!product) {
-		return res.sendStatus(404)
+		return res.status(404).json({ message: 'Product not found' })
 	}
 	res.status(200).json(product)
 })
 
 router.post('/', (req: Request, res: Response) => {
-	const product = req.body
-	if (!product?.id || !product?.title || !product?.price) {
+	const { title, price } = req.body
+	if (!title || price === undefined) {
 		return res.status(400).json({ message: 'Invalid product data' })
 	}
-	productsService.addProduct(product)
-	res.sendStatus(201)
+	const newProduct = productsService.addProduct({ title, price })
+	res.status(201).json(newProduct)
 })
 
 router.delete('/:id', (req: Request, res: Response) => {
 	const id = Number(req.params.id)
-	productsService.deleteProduct(id)
-	res.sendStatus(200)
-})
+	const deleted = productsService.deleteProduct(id)
 
-router.put('/:id', (req: Request, res: Response) => {
-	const id = Number(req.params.id)
-	const product = req.body
-	const existing = productsService.productById(id)
-	if (!existing) {
+	if (!deleted) {
 		return res.sendStatus(404)
 	}
-	productsService.updateProduct(id, product)
-	res.sendStatus(200)
+
+	res.sendStatus(204)
+})
+
+router.patch('/:id', (req: Request, res: Response) => {
+	const id = Number(req.params.id)
+	const updated = productsService.updateProduct(id, req.body)
+	if (!updated) {
+		return res.sendStatus(404)
+	}
+	res.status(200).json(updated)
 })
 
 export const productsRouter = router
