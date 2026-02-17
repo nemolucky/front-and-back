@@ -1,6 +1,6 @@
 import express from 'express'
-import { productsRouter } from './controllers/products.controller.js'
 import { loggerMiddleware } from './logger/logger.js'
+import { productsRouter } from './controllers/products.controller.js'
 
 const app = express()
 
