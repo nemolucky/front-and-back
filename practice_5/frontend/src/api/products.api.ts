@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { IProduct } from '../types/product.interface'
 
-const apiProductClient = axios.create({
-	baseURL: 'http://localhost:3000/api/products',
+const apiClient = axios.create({
+	baseURL: 'http://localhost:3000/api',
 	headers: {
 		'Content-Type': 'application/json',
 		accept: 'application/json',
@@ -11,19 +11,19 @@ const apiProductClient = axios.create({
 
 export const apiProduct = {
 	getProducts: async () => {
-		const response = await apiProductClient.get('/')
+		const response = await apiClient.get('/products')
 		return response.data
 	},
 	deleteProduct: async (id: string) => {
-		await apiProductClient.delete(`/${id}`)
+		await apiClient.delete(`/products/${id}`)
 		return true
 	},
 	createProduct: async (product: Omit<IProduct, 'id'>) => {
-		const response = await apiProductClient.post('/', product)
+		const response = await apiClient.post('/products', product)
 		return response.data
 	},
 	updateProduct: async (id: string, product: Omit<IProduct, 'id'>) => {
-		const response = await apiProductClient.patch(`/${id}`, product)
+		const response = await apiClient.patch(`/products/${id}`, product)
 		return response.data
 	},
 }
