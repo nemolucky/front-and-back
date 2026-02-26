@@ -17,6 +17,7 @@ export interface IProduct {
 	category: ProductCategory
 	price: number
 	leftInStock: number
+	image: string
 }
 
 export const PRODUCTS: IProduct[] = [
@@ -27,6 +28,8 @@ export const PRODUCTS: IProduct[] = [
 		category: ProductCategory.ELECTRONICS,
 		price: 120,
 		leftInStock: 15,
+		image:
+			'https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=800&q=80',
 	},
 	{
 		id: nanoid(6),
@@ -35,14 +38,8 @@ export const PRODUCTS: IProduct[] = [
 		category: ProductCategory.ELECTRONICS,
 		price: 899,
 		leftInStock: 8,
-	},
-	{
-		id: nanoid(6),
-		title: 'Gaming Mouse',
-		description: 'RGB high precision gaming mouse',
-		category: ProductCategory.ELECTRONICS,
-		price: 59,
-		leftInStock: 25,
+		image:
+			'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
 	},
 	{
 		id: nanoid(6),
@@ -51,22 +48,8 @@ export const PRODUCTS: IProduct[] = [
 		category: ProductCategory.CLOTHING,
 		price: 25,
 		leftInStock: 40,
-	},
-	{
-		id: nanoid(6),
-		title: 'Jeans',
-		description: 'Slim fit blue jeans',
-		category: ProductCategory.CLOTHING,
-		price: 70,
-		leftInStock: 18,
-	},
-	{
-		id: nanoid(6),
-		title: 'Sneakers',
-		description: 'Comfortable everyday sneakers',
-		category: ProductCategory.CLOTHING,
-		price: 95,
-		leftInStock: 12,
+		image:
+			'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80',
 	},
 	{
 		id: nanoid(6),
@@ -75,62 +58,8 @@ export const PRODUCTS: IProduct[] = [
 		category: ProductCategory.FOOD,
 		price: 3,
 		leftInStock: 100,
-	},
-	{
-		id: nanoid(6),
-		title: 'Organic Coffee',
-		description: 'Premium roasted coffee beans',
-		category: ProductCategory.FOOD,
-		price: 18,
-		leftInStock: 35,
-	},
-	{
-		id: nanoid(6),
-		title: 'Protein Bars Pack',
-		description: 'Box of 12 protein bars',
-		category: ProductCategory.FOOD,
-		price: 22,
-		leftInStock: 50,
-	},
-	{
-		id: nanoid(6),
-		title: 'Laptop Backpack',
-		description: 'Water resistant backpack',
-		category: ProductCategory.OTHER,
-		price: 45,
-		leftInStock: 20,
-	},
-	{
-		id: nanoid(6),
-		title: 'Desk Lamp',
-		description: 'LED adjustable desk lamp',
-		category: ProductCategory.OTHER,
-		price: 30,
-		leftInStock: 27,
-	},
-	{
-		id: nanoid(6),
-		title: 'Bluetooth Speaker',
-		description: 'Portable waterproof speaker',
-		category: ProductCategory.ELECTRONICS,
-		price: 75,
-		leftInStock: 16,
-	},
-	{
-		id: nanoid(6),
-		title: 'Jacket',
-		description: 'Winter insulated jacket',
-		category: ProductCategory.CLOTHING,
-		price: 150,
-		leftInStock: 9,
-	},
-	{
-		id: nanoid(6),
-		title: 'Energy Drink',
-		description: 'Sugar-free energy drink',
-		category: ProductCategory.FOOD,
-		price: 2,
-		leftInStock: 200,
+		image:
+			'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80',
 	},
 	{
 		id: nanoid(6),
@@ -139,5 +68,7 @@ export const PRODUCTS: IProduct[] = [
 		category: ProductCategory.OTHER,
 		price: 180,
 		leftInStock: 6,
+		image:
+			'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80',
 	},
 ]

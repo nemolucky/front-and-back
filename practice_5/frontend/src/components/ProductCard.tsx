@@ -10,7 +10,6 @@ interface Props {
 export function ProductCard({ product, onEdit, onDelete }: Props) {
 	return (
 		<div className='bg-neutral-200 rounded-lg shadow-xl overflow-hidden'>
-			{/* Фото */}
 			<div className='w-full h-48 bg-gray-300'>
 				<img
 					src={product.image}
