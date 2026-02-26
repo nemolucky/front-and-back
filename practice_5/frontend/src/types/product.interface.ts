@@ -15,4 +15,5 @@ export interface IProduct {
 	category: ProductCategory
 	price: number
 	leftInStock: number
+	image: string
 }

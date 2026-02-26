@@ -29,16 +29,34 @@ export function ProductModal({
 				category: ProductCategory.OTHER,
 				price: 0,
 				leftInStock: 0,
+				image: '',
 			})
 		}
 	}, [mode, initialData, reset])
+
+	const handleFormSubmit = (data: IProduct) => {
+		onSubmit(data)
+
+		if (mode === 'create') {
+			reset({
+				title: '',
+				description: '',
+				category: ProductCategory.OTHER,
+				price: 0,
+				leftInStock: 0,
+				image: '',
+			})
+		}
+
+		onClose()
+	}
 
 	if (!isOpen) return null
 
 	return (
 		<div className='fixed inset-0 flex items-center justify-center bg-black/50'>
 			<div className='bg-white p-6 rounded-lg shadow-lg w-96'>
-				<form onSubmit={handleSubmit(onSubmit)} className='space-y-3'>
+				<form onSubmit={handleSubmit(handleFormSubmit)} className='space-y-3'>
 					<button type='button' onClick={onClose} className='text-2xl'>
 						×
 					</button>
@@ -74,6 +92,13 @@ export function ProductModal({
 						type='number'
 						{...register('leftInStock', { valueAsNumber: true })}
 						placeholder='Left in stock'
+						className='border p-2 w-full'
+					/>
+
+					<input
+						type='url'
+						{...register('image', { required: true })}
+						placeholder='Image URL'
 						className='border p-2 w-full'
 					/>
 
