@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#4285f4" />
+    <meta name="description" content="Заметки" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Заметки</title>
+    <link rel="icon" href="/icons/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <section class="app-shell">
+        <header class="app-header">
+          <h1 class="app-title">Заметки</h1>
+          <nav class="tabs">
+            <button id="home-btn" class="tab active" type="button">Главная</button>
+            <button id="about-btn" class="tab" type="button">О приложении</button>
+          </nav>
+        </header>
+
+        <main id="app-content" class="content"></main>
+
+        <footer class="app-footer">
+          <button id="enable-push" class="btn btn-primary" type="button">Включить уведомления</button>
+          <button id="disable-push" class="btn btn-danger" type="button" style="display: none;">Отключить уведомления</button>
+        </footer>
+      </section>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
