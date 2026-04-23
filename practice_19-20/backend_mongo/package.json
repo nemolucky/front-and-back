@@ -1,0 +1,17 @@
+{
+	"name": "backend",
+	"scripts": {
+		"dev": "bun --watch src/index.ts"
+	},
+	"dependencies": {
+		"@types/node": "^25.6.0",
+		"dotenv": "^17.4.2",
+		"express": "^5.2.1",
+		"mongoose": "^9.4.1",
+		"pg": "^8"
+	},
+	"devDependencies": {
+		"@types/express": "^5.0.6",
+		"typescript": "^6.0.2"
+	}
+}
