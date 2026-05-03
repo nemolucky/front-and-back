@@ -1,0 +1,29 @@
+services:
+  backend1:
+    build: ./backend
+    environment:
+      INSTANCE_NAME: backend1
+      PORT: 3000
+
+  backend2:
+    build: ./backend
+    environment:
+      INSTANCE_NAME: backend2
+      PORT: 3000
+
+  backend3:
+    build: ./backend
+    environment:
+      INSTANCE_NAME: backend3-backup
+      PORT: 3000
+
+  haproxy:
+    image: haproxy:3.1-alpine
+    ports:
+      - "8081:80"
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - backend1
+      - backend2
+      - backend3
